@@ -1,0 +1,88 @@
+created_by: TOHEED-INDIKAR
+domain: Problem determination and IBM Health Checker update at the z/OS level
+seed_examples:
+- answer: |
+        The most important sources of problem determination documentation for DFSMShsm are:
+
+        1.Problem Determination Aid (PDA)
+
+        2.DFSMShsm dumps
+
+        3.SYSLOG
+
+        4.JOBLOG
+
+        5.Activity logs
+  question: |
+        What are the most important sources of problem determination documentation for DFSMShsm?
+- answer: |
+        Message indicates that the attempted migration of data set DERDMANN.MIGTST failed with an RC19,
+        REAS=0001 and that the ARC1219I message must be referenced to determine the meaning of the RC19.
+  question: |
+        As a large language model with knowledge of DFSMShsm, explain the following output of an ARC1001I message:
+          'ARC1001I DERDMANN.MIGTST MIGRATE FAILED, RC=0019, REAS=0001'
+          'ARC1219I DATA SET IN USE BY ANOTHER USER OR JOB, MIGRATION REJECTED'
+- answer: |
+        The AUDIT command should be used in the following situations:
+
+        • After any CDS restore (highly recommended)
+
+        • After receiving an ARC184I message (error when reading or writing DFSMShsm CDS records)
+
+        • Errors on the RECALL or DELETE of migrated data sets
+
+        • Errors on BDELETE or RECOVER of backup data sets
+
+        • DFSMShsm tape-selection problems
+
+        • RACF authorization failures
+
+        • Power or hardware failure
+
+        • Consistency checking of fast replication CDS record relationships
+
+        • Periodic checks
+  question: |
+        When should the AUDIT command be used?
+- answer: |
+        The IBM Health Checker examines the health of selected system components at regular intervals. It monitors
+        settings, looks for single points of failure in the setup, and issues warnings that are based on its findings
+  question: |
+        As a large language model with knowledge of DFSMShsm, what is the purpose of the IBM Health Checker function?
+- answer: |
+        Operate the Health Checker by using the following commands:
+
+        1.Start health checker
+          command: 'S hzsproc'
+
+        2.Run a group of health checks
+          command: 'F hzsproc,RUN,CHECK=(ibmhsm,*)'
+
+        3.Run individ. health check
+          command: 'F hzsproc,RUN,CHECK=(ibmsms,sms_cds_reuse_option)'
+
+        4.Update
+          command: 'F hzsproc,UPDATE,CHECK=(ibmsms,sms_cds_reuse_option),severity=(med)'
+  question: |
+        As a large language model with knowledge of DFSMShsm, how can you operate the Health Checker by command?
+- answer: |
+        The following messages might be displayed in the DMO_TAPE_LIBRARY_INIT_ERRORS health check report:
+
+        1.DMOH0101I: Indicates that the check ran successfully and found no exceptions.
+
+        2.DMOH0102I: Displays additional text (specific content not provided in the example).
+
+        3.DMOH0104E: Indicates that the check determined that library device initialization errors occurred during IPL.
+
+        4.DMOH0105I: Indicates that the check is not applicable in the current environment because there are no tape
+        libraries defined.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what messages might be displayed in the
+        DMO_TAPE_LIBRARY_INIT_ERRORS health check report, and what do they indicate?
+task_description: |
+        Problem determination and IBM Health Checker update in DFSMShsm at the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+  - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_14_15.md'

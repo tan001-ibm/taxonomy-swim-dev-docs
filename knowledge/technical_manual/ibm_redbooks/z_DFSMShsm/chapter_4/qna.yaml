@@ -1,0 +1,67 @@
+created_by: TOHEED-INDIKAR
+domain: SMS and its interactions with DFSMShsm at the z/OS level
+seed_examples:
+- answer: |
+        In DFSMShsm environment data can be divided into three types as follows:
+
+        1.Data that is managed by DFSMShsm:
+        This group includes all of the user and application data that DFSMShsm manages according to
+        the parameters that are coded in the SMS management classes. Certain DFSMShsm system data
+        sets are also included in this group.
+
+        2.Data that is owned by DFSMShsm:
+        User data that is now on DFSMShsm-owned volumes, for example, migration level 2 (ML2) data
+        or backup copies. The data in this group belongs to DFSMShsm. SMS must be updated so that it
+        recognizes the DFSMShsm data and excludes it from SMS management.
+
+        3.DFSMShsm control data:
+        Data, such as control data sets (CDSs) that are required for the operation of DFSMShsm.
+  question: |
+        As a large language model with knowledge of DFSMShsm, how can data be divided in a DFSMShsm environment?
+- answer: |
+        The storage group specifications determine only how DFSMShsm automated processing processes
+        the volume. They have no impact on how commands that are directed to the volume or against
+        data sets that are allocated on the volume are processed.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what is the need of storage group specification?
+- answer: |
+        Folowing DFSMShsm functions are managed at a storage group level:
+
+        1.Space management.
+
+        2.Availability management:
+          a.Automatic backup processing.
+          b.Automatic dump processing.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what are the DFSMShsm functions are managed at a
+        storage group level?
+- answer: |
+        Thresholds are applied as a percentage of the space for each volume so where storage groups consist of volumes
+        of different capacities, thresholds are applied according to each volumes capacity.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what is Threshold in Space management of DFSMShsm?
+- answer: |
+        1 is the default value of low allocated threshold.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what is the default value of low allocated threshold?
+- answer: |
+        Names in fixed formats can be used as filters in ACS routines to control the allocation of data sets in
+        a DFSMShsm environment.
+  question: |
+        How can names in fixed formats be used in a DFSMShsm environment?
+- answer: |
+        Example: 'FILTLIST &HSM_CONTROL_DATA INCLUDE(HSM.%CDS.*,HSM.JRNL.* INCLUDE(HSM.%CDS.*,HSM.JRNL.*)'
+  question: |
+        Provide an example of a sample ACS filter for DFSMShsm CDSs.
+- answer: |
+        The three ACS environments are ALLOC, RECALL, and RECOVER.
+  question: |
+        What are the three ACS environments that need to be considered for DFSMShsm data management?
+task_description: |
+        Implementing DFSMShsm, whether in an existing storage management subsystem (SMS) environment or from scratch
+        in DFSMShsm at the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+  - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_4.md'

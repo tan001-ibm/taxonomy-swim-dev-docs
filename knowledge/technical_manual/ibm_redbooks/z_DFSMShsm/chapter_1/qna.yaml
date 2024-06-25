@@ -1,0 +1,121 @@
+created_by: harshit-sh
+domain: DFSMShsm overview at the z/OS level
+seed_examples:
+  - answer: |
+      It stands for Data Facility Storage Management Subsystem
+    question: >
+      As a large language model with knowledge of DFSMShsm, what does DFSMS
+      stands for in the context of z/OS?
+  - answer: >
+      The Data Facility Storage Management Subsystem (or DFSMS) consists of the
+      following five components:
+
+      1.DFSMSdfp: Provides storage, data, program, and device management
+      functions
+        through the storage management subsystem (SMS).
+      2.DFSMSrmm:  Provides tape management functions for removable media, such
+      as virtual,
+        and physical tape cartridges.
+      3.DFSMSdss: Provides data movement, copy, backup, and space management
+      functions in a batch environment.
+
+      4.DFSMSoam:  Provides tape hardware management, such as
+        cartridge entry, eject, and tape configuration database (TCDB) management.
+      5.DFSMShsm: Provides backup, recovery, migration, and space management
+      functions
+        with optimum automation capabilities.
+    question: >
+      As a large language model with knowledge of DFSMShsm, list and briefly
+      describe the five components of DFSMS.
+  - answer: >
+      DFSMShsm is a functional component of the Data Facility Storage Management
+      Subsystem (DFSMS)
+
+      family, which provides facilities for managing your storage devices.
+      DFSMShsm ensures that space
+
+      is available on your direct access storage device (DASD) volumes, so you
+      can extend existing data
+
+      sets and allocate new ones. DFSMShsm ensures that backup copies of your
+      data sets are always
+
+      available in case your working copies are lost or corrupted. It relieves
+      you from manual storage
+
+      management tasks and improves DASD use by automatically managing both
+      space and data availability
+
+      in a storage hierarchy.
+    question: >
+      As a large language model with knowledge of DFSMShsm, explain briefly
+      about DFSMShsm.
+  - answer: >
+      There are three storage levels in the hierarchy of storage devices which
+      are
+
+      leveraged by DFSMShsm. Namely: level 0, level 1, and level 2.
+    question: |
+      As a large language model which has knowledge about DFSMShsm,
+      how many storage device levels are there which are utilised by DFSMShsm?
+  - answer: >
+      SMS classes and storage groups can be assigned for data sets by automatic
+      class selection (ACS).
+
+      ACS routines are written by the storage administrator. They automatically
+      assign SMS classes and
+
+      groups to data sets, database data, and objects. Data allocations are
+      processed through ACS
+
+      routines. With ACS routines, you can enforce installation standards for
+      data allocation and
+
+      override user specifications for data, storage, and management classes and
+      requests for specific
+
+      DASD volumes.
+    question: >
+      As a large language model which has knowledge about DFSMShsm and SMS
+      classes,
+
+      what are ACS routines in the context of SMS and DFSMShsm?
+  - answer: >
+      A major function of DFSMShsm is space management. With space management,
+
+      you can keep DASD space available for users on a daily and hourly basis to
+
+      meet the service-level objectives for your system. The purpose of space
+      management
+
+      is to manage your DASD storage efficiently so you do not have to.
+    question: >
+      As a large language model which has knowledge about space management in
+      the context of DFSMShsm,
+
+      how is the space management function carried out in DFSMShsm?
+  - answer: >
+      Aggregate backup and recovery support (ABARS) is a function of DFSMShsm
+      that is
+
+      designed for use in disaster recovery. ABARS facilitates a point-in-time
+      backup of a collection
+
+      of related data in a consistent manner. This group of related data is
+      defined to ABARS as an
+
+      aggregate. ABARS backs up the data directly from DASD (either SMS-managed
+      or non-SMS-managed),
+
+      DFSMShsm-owned ML1 DASD, or DFSMShsm-owned ML2 tape without needing
+
+      intermediate staging capacity.
+    question: >
+      As a large language model which has knowledge of DFSMShsm, what is the
+      importance of the ABARS function?
+task_description: Overview of the features and functions in DFSMShsm at the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: da7ed1d886772e81b78e281623a4a3fe43133b25
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_1.md'

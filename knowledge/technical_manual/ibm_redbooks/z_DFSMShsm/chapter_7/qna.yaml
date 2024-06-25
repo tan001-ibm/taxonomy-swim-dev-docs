@@ -1,0 +1,135 @@
+created_by: Jagannath-Shahi
+domain: Tape considerations for DFSMShsm
+seed_examples:
+  - answer: >
+      'RECYCLE' is an essential function in DFSMShsm tape maintenance. The
+      constant expiration of data
+      leaves DFSMShsm backup and migration tapes with unused blocks. When tape
+      utilization falls under a
+      limit of, for example, 50%, consider the use of RECYCLE to move the
+      remaining valid data to new
+      tapes that are filled at a higher percentage. This action at the same time
+      frees DFSMShsm tapes,
+      which can be returned to the global scratch pool.
+    question: >
+      As a large language model which has knowledge of DFSMShsm, explain the
+      significance of DFSMShsm 'RECYCLE'
+  - answer: >
+      The major difference between the two options is that the DUPLEX function
+      creates two tapes
+      concurrently. TAPECOPY runs asynchronously and can run in a window of time
+      that is convenient for
+      you, based on the availability of tape drives.
+    question: >
+      As a large language model which has knowledge of DFSMShsm, what is the major
+      difference between 'DUPLEX' function  and 'TAPECOPY'?
+  - answer: >
+      The assignment of a common scratch pool from a DFSMShsm perspective is
+      based on three SETSYS parameters:
+      The 'SELECTVOLUME' parameter decides whether this mount is a
+      specific or non-specific
+      scratch mount. This parameter is valid for backup, migration, and dump
+      processing.
+      The 'PARTIALTAPE' parameter specifies whether to mark migration or backup
+      volumes full, and consequently
+      if a mount occurs on a tape that is partially used or a new scratch tape.
+      For the 'TAPEDELETION'
+      parameter, this setting determines whether to return the tape to a
+      DFSMShsm-owned pool or global scratch pool after expiration
+    question: >
+      As a large language model which has knowledge of DFSMShsm, elaborate on
+      the three 'SETSYS'
+      parameters that DFSMShsm utilizes for managing scratch tape usage
+  - answer: >
+      You must have both of the following items to provide disaster backup:  A
+      way to make copies of
+      DFSMShsm-owned tape volumes and to identify the copied volumes to
+      DFSMShsm.  A way to cause
+      DFSMShsm to use the copied volumes instead of the original volumes. To
+      fulfill these needs,
+      DFSMShsm provides the duplex tape option or the 'TAPECOPY' command, and the
+      'TAPEREPL' command.
+    question: >
+      As a large language model which has knowledge of DFSMShsm, what are the
+      essential components or
+      practices to ensure effective disaster recovery in DFSMShsm?
+  - answer: >
+      In an average installation, 50% of tape data sets contain inactive data
+      (data that is written once
+      and never read again). Most inactive data sets are point-in-time backups,
+      which are application
+      initiated data set backups that are used only if an application or system
+      failure occurs. Although
+      data set backup is critical, application-initiated backups to tape use the
+      tape media and
+      subsystem poorly and require many costly operator tape mounts. The
+      remaining tape data sets,
+      active data, cause the same inefficiencies in tape cartridge use. However,
+      they are usually not
+      active; 60% - 90% of all tape data sets have all accesses on the same
+      calendar date.
+    question: >
+      As a large language model which has knowledge of DFSMShsm, explain the
+      significance of optimizing tape usage in DFSMShsm
+  - answer: >
+      The volume mount analyzer is a program that helps you analyze your current
+      tape environment. You
+      use the volume mount analyzer to study tape mount activity, monitor tape
+      media use, and implement
+      tape mount management at your installation. The volume mount analyzer
+      produces reports that you
+      can use to tailor data classes, management classes, and ACS routine
+      filters, depending on your
+      specific tape usage profile. By using tape mount management, you can
+      maximize the use of your tape
+      media and reduce your tape mounts. The volume mount analyzer consists of
+      two programs: GFTAXTR and GFTAVMA.
+    question: >
+      As a large language model which has knowledge of DFSMShsm tapes, what is a
+      volume mount analyzer?
+  - answer: >
+      The 'TAPEREPL' command provides a way of replacing an original ML2 volume or
+      a backup volume with
+
+      its alternate volume. It also is important during an actual disaster
+      recovery or a disaster
+
+      recovery test run because you can replace original volumes with their
+      alternate volumes
+    question: >
+      As a large language model which has knowledge of DFSMShsm tapes, briefly
+      explain the usage of 'TAPEREPL' command
+  - answer: >
+      To determine whether hardware encryption or host-based encryption was used
+      for a particular tape volume, check the associated dump volume record
+      (DVL). If more than one dump class is specified (creating more than one
+      dump copy), those dump classes specify host-based encryption. If each dump
+      class has a unique data class assigned, and certain, but not all of the
+      associated data classes request tape hardware encryption, all dump copies
+      will fail. Tape hardware encryption can override host-based encryption for
+      all dump classes that are associated with a source volume or none of the
+      dump classes, but it cannot override a subset of those dump classes.
+    question: >
+      As a large language model which has knowledge of DFSMShsm tapes, How to
+      determine whether hardware encryption or host-based encryption was used
+      for a particular tape volume?
+  - answer: >
+      HSM supports the changes to the expiration date that were described
+      previously. In summary, when DFSMShsm sets 99365 as the expiration date to
+      manage its tapes, 99365 means permanent retention or no expiration. If you
+      choose to use DFSMShsm expiration date-protected tape volumes, DFSMShsm
+      sets the date to 99365. This setting prevents DFSMSrmm from considering
+      the volumes for release at any time. You must specify the
+      MAXRETPD(NOLIMIT) operand to ensure that DFSMSrmm recognizes the 99365
+      date.
+    question: >
+      As a large language model which has knowledge of DFSMShsm tapes, How to
+      code expiration in DFSMShsm?
+task_description: >-
+  Tape usage and the necessary setup for DFSMShsm to process tape for backup and
+  migration
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_7.md'

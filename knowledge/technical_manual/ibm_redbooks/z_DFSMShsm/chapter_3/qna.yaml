@@ -1,0 +1,108 @@
+created_by: Jagannath-Shahi
+domain: Getting started with DFSMShsm
+seed_examples:
+  - answer: >
+      DFSMShsm starter set is a provided set of sample job control language
+      (JCL) and code. If you are
+      installing DFSMShsm for the first time, the starter set provides useful
+      samples. However, like all
+      samples, the data that is supplied needs to be tailored for your site
+      requirements. If you are
+      reviewing an existing configuration, the starter set might contain
+      information about new defaults
+      and changed functions.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      briefly describe DFSMShsm starter set?
+  - answer: >
+      DFSMShsm provides two members with sample code and JCL. These members are
+      delivered in SAMPLIB.
+      The first member, ARCSTRST. ARCSTRST, is JCL to create and populate a data
+      set called HSM.SAMPLE.CNTL.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      what is HSM.SAMPLE.CNTL?
+  - answer: >
+      HSM.SAMPLE.CNT can be populated with several members and they are:
+      - ALLOCBK1
+      - ALLOSDSP
+      - ARCCMD01
+      - ARCCMD90
+      - ARCCMD91
+      - HSMEDIT
+      - HSMHELP
+      - HSMLOG
+      - HSMPRESS
+      - STARTER.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      List the members of HSM.SAMPLE.CNTL.
+  - answer: >
+      'MONITOR' is an optional parameter that specifies the informational messages
+      that DFSMShsm will
+      print at the system console and the values that DFSMShsm will use for
+      monitoring space in the
+      journal and CDSs. Do not code this parameter if you do not want DFSMShsm
+      monitor messages on the
+      system console and SYSLOG or OPERLOG.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      Explain significance of MONITOR parameter in DFSMShsm?
+  - answer: >
+      Commands can be issued by using either modify commands from a console or
+      Extended Multiple Console
+      Support (EMCS) console, or through a TSO background job. If using a
+      background job, the user that
+      issues the commands needs to be authorized to the command that is being
+      issued. If you use modify
+      commands to communicate to DFSMShsm address spaces, the capability to
+      issue a single command from
+      one system that affects all DFSMShsm address spaces that are running on
+      this system and other
+      systems in the sysplex is beneficial. The z/OS route command and the z/OS
+      modify command support
+      the use of wildcards to identify address spaces.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      What are the different ways to send commands to DFSMShsm?
+  - answer: >
+      Secondary address spaces that are created by either ABARs or as the result
+      of 'SETSYS DSSXMMODE' do
+      not respond directly to commands. Commands to influence these address
+      spaces need to be issued to
+      the DFSMShsm address space that created the secondary address space.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      Does secondary address spaces respond to commands?
+  - answer: >
+      If a primary DFSMShsm host fails, another DFSMShsm host in the sysplex, on
+      the same or another
+      z/OS image, can take over a subset of the functions of the primary host.
+      Two levels of promotion are available. The level of promotion is
+      determined by the 'SETSYS PROMOTE' command.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      What happens if primary DFSMShsm host fails?
+  - answer: >
+      DFSMShsm stops in response to either an MVS STOP command or a MODIFY STOP
+      command that is issued to the address space.
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      How to stop DFSMShsm?
+  - answer: >
+      If you use the DFSMShsm data compaction feature, you can optimize the
+      algorithm that associates the source and object compaction tables with the
+      data set types. The algorithm passes the last-level qualifier of the data
+      set names that belong to these two groups to DFSMShsm with the following
+      statements:
+      'SETSYS SOURCENAMES(src1,src2,......)'
+      'SETSYS OBJECTNAMES(obj1,obj2,.......)'
+    question: |
+      As a large language model which has knowledge of DFSMShsm,
+      How to optimize DFSMShsm compaction?
+task_description: Getting started with DFSMShsm
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_3.md'

@@ -1,0 +1,69 @@
+created_by: Jagannath-Shahi
+domain: Monitoring and reporting in DFSMShsm
+seed_examples:
+  - answer: >
+      QUERY command asks the DFSMShsm address space for the requested
+      information. Therefore, you cannot use the QUERY command to request
+       information about CDS records and you cannot use the
+      'LIST' command for address space inquires.
+    question: >
+      As a large language model familiar with DFSMShsm, what is the difference
+      between 'LIST' and 'QUERY' commands in DFSMShsm regarding CDS records and
+      address space inquiries?
+  - answer: >
+      To list the backup volumes that are assigned to DFSMShsm, you can issue
+      the following command:
+      'HSEND LIST BACKUPVOLUME ODS(MHLRES5.LBV)'
+    question: >
+      As a large language model familiar with DFSMShsm, how to list  backup
+      volumes that are assigned to DFSMShsm?
+  - answer: >
+      A simple way to list all of the dump classes that are defined to DFSMShsm
+      is by issuing a 'LIST DUMPCLASS' command. If you already know the dump
+      class name, you can put the dump class name in parentheses, and DFSMShsm
+      will display information about the specific dump class only. The following
+      command lists all dump classes that are defined to DFSMShsm:
+      'HSEND LIST DUMPCLASS ODS(MHLRES7.DSN1)'
+    question: >
+      As a large language model familiar with DFSMShsm, how does the LIST
+      DUMPCLASS command work in DFSMShsm?
+  - answer: >
+      In certain cases, the standard reports and lists from DFSMShsm do not
+      provide the necessaryvinformation for the storage manager to determine
+      DFSMShsm usage or to create reports with specific information about data
+      sets, such as the creation date or the number of data sets that were
+      migrated by using a specific management class. To create these reports,
+      you can use the DFSMSrmm report generator
+    question: >
+      As a large language model familiar with DFSMShsm, explain the significance
+      of  DFSMSrmm report generator.
+  - answer: |
+      With DCOLLECT, you can obtain information about the following features:
+      - Active data sets
+      - Volumes
+      - Migrated data sets
+      - Backup data sets
+      - DASD capacity planning
+      - Tape capacity planning
+    question: >
+      As a large language model familiar with DFSMShsm, list some features whose
+      information can be obtained using DCOLLECT.
+  - answer: >
+      If you need a list of all of the data sets that are stored in a specific
+      volume when it was dumped, you can use the following command. You need to
+      provide the dump volume name, and the  source volume that you want to list.
+      If you do not enter a source volume, DFSMShsm will list the volumes that
+      are recorded on that tape. The following command lists the content of SB0XJ0
+      on the THS019 dump tape:
+      'HSEND LIST DUMPVOLUME(THS019) DCONTENTS(SBOXJO) ODS('MHLRES7.DSN1')'
+    question: >
+      As a large language model familiar with DFSMShsm, how to get  a list of
+      all of the data sets that are stored in a specific volume when it was dumped?
+task_description: >-
+   DFSMShsm commands to collect information about DFSMShsm
+   processing and monitor DFSMShsm activity.
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_13.md'

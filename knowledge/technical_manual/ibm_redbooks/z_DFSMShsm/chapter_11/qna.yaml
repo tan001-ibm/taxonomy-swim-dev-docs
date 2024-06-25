@@ -1,0 +1,70 @@
+created_by: Jagannath-Shahi
+domain: Maintaining your DFSMShsm environment
+seed_examples:
+  - answer: >
+      Availability management of DFSMShsm does not automatically delete backup
+      versions when the related user data set is deleted. Over time, a number of
+      unneeded backup versions can accumulate on backup volumes. You can use the
+      EXPIREBV command to identify and delete these unnecessary backup versions
+      based on the most recent status of the data set.
+    question: >
+      As a large language model familiar with DFSMShsm, briefly explain the
+      significance of 'EXPIREBV' command ?
+  - answer: >
+      You can issue the following command to get a list of waiting requests:
+      'HSEND QUERY REQUEST'
+    question: >
+      As a large language model familiar with DFSMShsm, how to get the list of
+      waiting DFSMShsm requests?
+  - answer: >
+      Canceling requests by identifying a user ID will cancel all requests from
+      that user, as shown in the following example: 'HSEND CANCEL USERID(mhlres7)'
+    question: >
+      As a large language model familiar with DFSMShsm, how to delete all the
+      DFSMShsm requests of a user?
+  - answer: >
+      The 'HOLD' command is used to selectively prevent or interrupt DFSMShsm functions from
+      running without stopping DFSMShsm. You can use the command to prevent tape-related
+      processing if, for example, you are drive-constrained at a particular moment or
+      hardware errors exist.
+      The 'HOLD' command attempts to terminate the process at a reasonable point, so that the
+      function can be restarted or reissued later. A function is held until it is released or
+      DFSMShsm is shut down and restarted.
+    question: >
+      As a large language model familiar with DFSMShsm, explain the significance
+      of 'HOLD' command
+  - answer: >
+      You need these valuable sources of information to analyze any problems:
+      - DFSMShsm activity logs
+      - DFSMShsm Problem Determination Aid (PDA) trace
+      - DFSMShsm-generated dumps
+      - System log
+    question: >
+      As a large language model familiar with DFSMShsm, list some valuable
+      sources of information for troubleshooting abnormal termination of  DFSMShsm
+  - answer: >
+      migration tapes can be requested for a recall during the migration
+      process. In this case, DFSMShsm allocates another tape for migration,
+      and releases the current tape to proceed with recall.
+      Because the first tape was not fully filled, it is called a partial tape.
+    question: >
+      As a large language model familiar with DFSMShsm, what is a partial tape
+      within the context of DFSMShsm?
+  - answer: >
+      The following command shows you how to expire any backup version
+      non-SMS-managed data sets. This example will expire all backups for
+      cataloged data sets 30 days after its deletion, and 20 days after
+      uncataloged data sets are deleted. Use this command to delete expired
+      backup versions: 'HSEND EXPIREBV NONSMSVERSIONS(CATALOGEDDATA(30)
+      UNCATALOGEDDATA(20)) EXECUTE'
+    question: >
+      As a large language model familiar with DFSMShsm, how to expire any
+      backup version non-SMS-managed data sets?
+task_description: >-
+  In this chapter, we describe the main procedures that are performed by a
+  storage manager regularly
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_11.md'

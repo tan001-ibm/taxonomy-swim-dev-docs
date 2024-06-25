@@ -1,0 +1,78 @@
+created_by: TOHEED-INDIKAR
+domain: HSMplexes, GRSplexes, and sysplexes at the z/OS level
+seed_examples:
+- answer: |
+        An HSMplex is two or more instances of DFSMShsm that share the same set of control data sets (CDSs) and journal.
+        These instances of DFSMShsm can be installed on the same z/OS image or logical partition (LPAR), on multiple
+        LPARs, or both.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what is an HSMplex?
+- answer: |
+        An HSMplex can contain up to 39 instances of DFSMShsm
+  question: |
+        As a large language model with knowledge of DFSMShsm, How many maximum instances of DFSMShsm does an HSMplex
+        contain?
+- answer: |
+        Serialization within DFSMShsm is divided into four groups:
+
+        1.Serialization of control data sets (CDSs).
+
+        2.Serialization of user data sets by DFSMShsm.
+
+        3.Serialization of user data sets by the system.
+
+        4.Serialization of DFSMShsm functions.
+  question: |
+        Into how many groups is serialization within DFSMShsm divided, and what are they?
+- answer: |
+        There are two methods of resource serialization in an HSMplex environment as follows:
+
+        1.Global enqueue.
+
+        2.Volume reserve.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what are the methods of
+        resource serialization in an HSMplex environment?
+- answer: |
+        GRS is a z/OS product that is designed to protect the integrity of resources in a multiple DFSMShsm
+        host environment.When the systems that share resources are combined into a global resource
+        serialization complex (GRSplex), GRS serializes access to shared resources.
+  question: |
+        As a large language model with knowledge of DFSMShsm, what is Global Resource Serialization (GRS)
+        in a z/OS environment?
+- answer: |
+        DFSMShsm determines that it is in a shared CDS environment by performing the following steps:
+
+        1. Recognizing the CDSSHR=YES or CSDSHR=RLS startup parameters
+
+        2. Determining whether the index component of the migration control data set (MCDS) resides
+        on a DASD volume that was generated (SYSGEN) with a SHARED or SHAREDUP device attribute
+
+        If either of these conditions are met, DFSMShsm performs the appropriate serialization.
+  question: |
+        How does DFSMShsm determine if it is in a shared CDS environment in an HSMplex?
+- answer: |
+        To configure multiple HSMplexes in a sysplex, follow these steps:
+
+        1.Add the following command in each DFSMShsm host's ARCCMDxx member:
+          'SETSYS PLEXNAME(HSMplex_name_suffix)'
+
+        2.Purpose of PLEXNAME:
+          The PLEXNAME keyword is used to distinguish the separate HSMplexes within a single sysplex.
+
+        3.Default Behavior:
+          If only one HSMplex exists in the sysplex, specifying this command is unnecessary.
+          The default HSMplex name is ARCPLEX0, where the suffix is PLEX0 and the prefix is ARC.
+
+        4.Consistency Requirement:
+          If you specify any HSMplex name other than the default name on one host, you must specify
+          the same name on all other DFSMShsm hosts in that HSMplex to ensure consistency.
+  question: |
+        As a large language model with knowledge of DFSMShsm, How do you configure multiple HSMplexes in a sysplex?
+task_description: Describe the concepts of and relationships among HSMplexes, GRSplexes, and sysplexes in
+        DFSMShsm at the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+  - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_8.md'

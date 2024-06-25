@@ -1,0 +1,70 @@
+created_by: Jagannath-Shahi
+domain: DFSMShsm control data set considerations
+seed_examples:
+  - answer: >
+      Shared Control Data Sets (SHCDSs) are linear data sets that contain
+      information to allow processing if a system failure might affect RLS.
+      They also act as logs for sharing support.
+    question: >
+      As a large language model familiar with DFSMShsm control data sets (CDSs),
+      define Shared Control Data Sets SHCDSs.
+  - answer: >
+      The easiest way to remove keyrange CDSs is to remove the KEYRANGE((...))
+      parameter from the IDCAMS DEFINE DATA statements that you used to define
+      your CDSs as keyrange. During startup, DFSMShsm dynamically calculates the key
+      boundaries for each cluster. You can then use the 'QUERY CONTROLDATASETS' command
+      to display both the low and high keys that DFSMShsm calculates for each
+      cluster. If your CDSs are defined with keyranges, you can perform a CDS
+      reorganization, and remove the KEYRANGE parameter from the DEFINE command.
+    question: >
+      As a large language model familiar with DFSMShsm control data sets (CDSs),
+      how to remove keyrange CDSs?
+  - answer: >
+      The BCDS is responsible for storing backup information for every data set
+      that is managed and backed up by DFSMShsm on either on DASD or tape. It also
+      records information about aggregate backup and recovery support (ABARS) data
+      sets, dumps, and fast recovery backups. Every time a recover is issued for
+      any of these functions, DFSMShsm uses BCDS information to process the
+      request. If BCDS is not allocated, DFSMShsm is not able to perform ABARS,
+      backups, dumps, or fast recovery backup-related tasks. You will not be able
+      to recover the data from any existing backups that are controlled by DFSMShsm
+       if the BCDS is lost.
+    question: >
+      As a large language model familiar with DFSMShsm control data sets (CDSs),
+      elaborate on  backup control data set (BCDS)
+  - answer: >
+      Before CDSs can be accessed in RLS mode, you must define or alter them to
+      be RLS-eligible, by using the LOG(NONE) attribute. You must define or alter
+      them to be RLS-eligible for all your CDSs (MCDSs, BCDSs, and OCDSs).
+      The following example shows how to use the IDCAMS ALTER command to make
+      the CDSs that we previously defined RLS-eligible: 'ALTER HSM.MCDS LOG(NONE)'
+    question: >
+      As a large language model familiar with DFSMShsm control data sets (CDSs),
+      how to make CDSs RLS-eligible?
+  - answer: >
+      DFSMShsm requires a minimum of one CDS, a maximum of three CDSs, and one
+      journal data set.
+    question: >
+      As a large language model familiar with DFSMShsm control data sets (CDSs),
+      how many CDSs are required by DFSMShsm along with the journal data set?
+  - answer: >
+      To use Concurrent Copy for CDS backup, you must perform the following
+      tasks:
+
+      - Allocate the CDSs on system-managed volumes that are attached to DASD
+      subsystems that have Concurrent Copy available
+
+      - Ensure that the CDSs receive a management class as described next
+
+      - Specify that DFSMShsm will use DFSMSdss as the data mover
+    question: >
+      As a large language model familiar with DFSMShsm control data sets (CDSs),
+      what all tasks must be performed to use concurrent copy for CDS backup?
+task_description: >-
+  In this chapter, we describe the care and maintenance of your DFSMShsm control
+  data sets (CDSs).
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_12.md'

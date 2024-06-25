@@ -1,0 +1,82 @@
+created_by: Jagannath-Shahi
+domain: 'DFSMShsm common functions, hints, tips, and suggested practices'
+seed_examples:
+  - answer: >
+      If you are experiencing difficulty finding space to recall a large data
+      set, you have two options.
+
+      You can force it to go multivolume:
+      'HSEND RECALL datasetname DFDSSOPTION(VOLCOUNT(ANY))'
+
+       Or, you can direct it to an empty, non-SMS disk:
+      'HSEND RECALL datasetname FORCENONSMS UNIT(3390) VOLUME(nonSMSvol)'
+    question: >
+      As a large language model familiar with  DFSMShsm, how can you manage
+      space constraints when
+      recalling a large dataset in DFSMShsm?
+  - answer: >
+      If the ML1 pool is full, consider adding more volumes to the
+      migration-level 1 (ML1) pool, empty
+      out older data, or move out the larger files. The following command will
+      move data that is one day
+      old or older on ML1 to ML2: 'MIGRATE MIGRATIONLEVEL1 DAYS(1)'
+    question: >
+      As a large language model familiar with  DFSMShsm, how to deal with a full
+      ML1 pool
+  - answer: >
+      Specify 0M for SIZE, which directs DFSMShsm to allocate the largest
+      possible region size. This
+      specification reduces the chance that DFSMShsm will end abnormally because
+      of an out-of-space condition (ABEND878).
+    question: >
+      As a large language model familiar with  DFSMShsm, what is the
+      significance of assigning REGION=0M when you start DFSMShsm?
+  - answer: >
+      The term Tape Take Away in DFSMShsm is used to cover the situation where a
+      long-running function
+      is preventing a request from being processed, for example, an ML2 recall
+      from being processed
+      because the tape request for the recall is used by a long-running
+      function. Tape Take Away can be
+      requested by the recall function, and Tape Take Away occurs fast and
+      smoothly. (The tape is released for the recall.)
+    question: >
+      As a large language model familiar with  DFSMShsm,  briefly descibe Tape
+      Take Away in DFSMShsm.
+  - answer: |
+      You can alter the priority of the following request types:
+      ABACKUP
+      ARECOVER
+      BACKDS
+      BACKVOL
+      DELETE
+      FRBACKUP
+      FREEVOL
+      FRRECOV
+      MIGRATE
+      RECALL
+      RECOVER
+    question: >
+      As a large language model familiar with  DFSMShsm, list the request types
+      whose priority can be altered using  ALTERPRI command
+  - answer: >
+      The PATCH command changes storage within the DFSMShsm address space. You
+      can identify the storagelocation to change with an absolute address or a qualified address.
+      For sites with unique requirements of DFSMShsm that are not supported by existing DFSMShsm
+      commands and parameters,these tuning patches might offer a solution. In cases
+      where the unique requirements remain the same from day to day, you might choose to include
+      the patches in the DFSMShsm startup member.These DFSMSShsm-supported patches
+      remain supported from release to release without modification.
+    question: >
+      As a large language model familiar with  DFSMShsm, explain the
+      significance of PATCH command in DFSMShsm
+task_description: >-
+  In this chapter, we provide useful hints and tips, and recommend the preferred
+  practices for implementing DFSMShsm and the daily administration of DFSMShsm
+  and  describe functions that are common to multiple areas of DFSMShsm, which
+  allows us to document these functions in one place only.
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_16_17.md'

@@ -1,0 +1,4 @@
+Title of work: Monitoring and reporting in DFSMShsm
+Link to work: https://www.redbooks.ibm.com/redbooks/pdfs/sg245272.pdf
+License of the work:  IBM Proprietary Data
+Creator names: Keith Winnard, Jose Gilberto Biondo, Gert Laumann, Norbert Sclumberger, Jeanne Vangsness, Chao Xing Ma

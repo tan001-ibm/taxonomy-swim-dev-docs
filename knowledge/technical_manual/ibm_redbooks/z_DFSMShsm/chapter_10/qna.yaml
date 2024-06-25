@@ -1,0 +1,74 @@
+created_by: TOHEED-INDIKAR
+domain: Availability management means backup at the z/OS level
+seed_examples:
+- answer: |
+        The automatic backup function, which is also referred to as incremental backup, ensures that current
+        copies of new and changed data sets exist in case the original data sets are damaged or accidentally
+        deleted. The automatic incremental backup function is a data-set-level function when DFSMShsm is
+        processing level 0 volumes or a level 1 migration volume to a backup volume during the automatic backup window.
+  question: |
+        What is the purpose of the automatic backup function in DFSMShsm, and how does it ensure data availability?
+- answer: |
+        For DFSMShsm to perform automatic backup, you must set up automatic backup requirements for both the
+        DFSMShsm environment and the data set level.
+  question: |
+        What setup is required for DFSMShsm to perform automatic backups?
+- answer: |
+        Use following command is used to back up an individual data set in DFSMShsm:
+
+        command: '(H)BACKDS dsname | dsn_patterns'
+  question: |
+        Which data set backup command is used to back up an individual data set in DFSMShsm?
+- answer: |
+        The data set backup by command function provides the following capabilities:
+
+        1.Up to 64 data sets for each host can be backed up at one time.
+
+        2.Data sets can be backed up directly to DASD or to tape.
+
+        3.If Concurrent Copy is specified, users are notified when the data set backup is either logically
+        or physically complete. In addition, Concurrent Copy supports non-SMS data sets, or if specified on
+        the command, Concurrent Copy overrides the management class for an SMS data set.
+
+        4.Users can unmount continuously mounted backup tapes.
+
+        5.Users can tailor the times when DFSMShsm unmounts a tape.
+
+        6.Users can specify the number of days to retain a specific backup copy of a data set. See 10.1.4,
+        “Backing up a data set manually and the RETAINDAYS keyword” on page 257.
+
+        7.Users can create a data set backup copy and store it under a different, specified data set name.
+  question: |
+        What capabilities does the data set backup by command function in DFSMShsm provide?
+- answer: |
+        You can use automatic backup for data sets on non-SMS-managed volumes by using the 'ADDVOL' command
+        and defining it in the 'ARCCMDxx' member. The syntax is:
+
+        command:'ADDVOL volser UNIT(unittype) PRIMARY(AUTOBACKUP)'
+  question: |
+        How can you use automatic backup for data sets on non-SMS-managed volumes in DFSMShsm?
+- answer: |
+        The frequency of data set backups for non-SMS-managed storage is defined using the 'FREQUENCY'
+        parameter of the 'SETSYS' command. This parameter controls the backup frequency for the data
+        sets processed by each DFSMShsm host. The command to add to the 'ARCCMDxx' member for each host is:
+
+        command: 'SETSYS FREQUENCY(days)'
+  question: |
+        How do you define the frequency of data set backups for non-SMS-managed storage in DFSMShsm?
+- answer: |
+        The process of fast data replication occurs so fast because it builds a map, with pointers,
+        to the source volume tracks or extents. You no longer need to wait for the physical copy to
+        complete before applications can resume the access to the data. Both the source and target
+        data are available for read/write access almost immediately, while the copy process
+        continues in the background. This process guarantees that the contents of the target volume
+        are an exact duplicate of the source volume at that point in time.
+  question: |
+        What is the purpose of the fast replication function in DFSMShsm, and how does it work?
+task_description: |
+        Controlling the availability management of storage management subsystem in DFSMShsm at
+        the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_10.md'

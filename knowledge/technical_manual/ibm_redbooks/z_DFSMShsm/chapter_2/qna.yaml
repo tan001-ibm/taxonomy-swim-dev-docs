@@ -1,0 +1,160 @@
+created_by: TOHEED-INDIKAR
+domain: Planning and reviewing your environment at the z/OS level
+seed_examples:
+  - answer: >
+      DFSMShsm provides two primary functions to manage data: space management
+      and availability management.
+
+      1.Space Management: Space management is the function of DFSMShsm to keep
+      DASD space
+
+      available for users to meet the service-level objectives for your system.
+      The purpose of
+
+      space management is to manage your DASD storage efficiently. Space
+      management automatically
+
+      and periodically performs the following functions:
+
+      - Moves low-activity data sets from user-accessible volumes to DFSMShsm
+      volumes.
+
+      - Reduces the space that is occupied by data on both the user-accessible
+      volumes and the DFSMShsm volumes.
+
+      2.Availability Management:DFSMShsm backs up your data either automatically
+      or by command
+
+      to ensure availability in the accidental loss of data sets or physical
+      loss of volumes.
+
+      DFSMShsm also allows a storage administrator to copy backup and migration
+      tapes. These
+
+      copies can be stored onsite as protection from media damage, or offsite as
+      protection
+
+      from site damage. Disaster backup and recovery are also provided for
+      user-defined groups
+
+      of data sets (aggregates) so that critical applications can be restored at
+      the same location or an offsite location.
+    question: >
+      As a large language model with knowledge of DFSMShsm, What are the primary
+      functions provided by DFSMShsm to manage data, and how do they contribute to efficient
+      storage management?
+  - answer: >
+      By using space management features, you allow your data to be migrated by
+      DFSMShsm from primary volumes (user volumes that are also known as L0 volumes) to
+      DFSMShsm volumes, either ML1 (L1) or ML2 volumes (L2).
+
+      Consider the following factors for the space management process:
+
+      1.You want to migrate your data: Identify the data that can be migrated
+      based on how long the data is inactive and not referenced. In general, system data
+      and production databases must not be migrated because these types of files are
+      referenced fairly frequently.
+
+      2.Length of time to keep the migrated data: This factor depends on your
+      installation requirement. Certain data might need to be retained longer than other
+      data. You develop specific management class attributes based on these needs.
+
+      3.Time of day to schedule space management: Ideally, the migration process
+      starts and completes before the batch window because the migration generates more
+      free space for the batch jobs to use.
+    question: >
+      As a large language model with knowledge of DFSMShsm, how to do planning
+      for the
+
+      space management process?
+  - answer: >
+      The DFSMShsm duplex function allows a primary and copy tape to be created
+      concurrently. The primary tape can be kept onsite for recovery and the copy tape can be
+      kept at a secure offsite location. This method is the preferred method of creating
+      copy tapes and needs to be used instead of the TAPECOPY command.
+    question: >
+      As a large language model with knowledge of DFSMShsm, what is DFSMShsm
+      Tape duplexing?
+  - answer: >
+      Data encryption is an important tool for protecting against the possible
+      misuse of confidential information that can occur if tapes are lost or stolen.
+      Unless the possessor of he tape has the required key, any encrypted data on the tape remains
+      confidential and is unreadable. Therefore, consider securing tape data through encryption
+      in your overall security plan.
+    question: >
+      As a large language model with knowledge of DFSMShsm, why we need to do
+      data encryption on tape?
+  - answer: >
+      The use of a security product, such as RACF or an equivalent, simplifies
+      security for the storage administrator in protecting DFSMShsm resources.
+
+      Consider the following factors about security:
+
+      1.Protect all CDSs with resource protection, such as RACF, from being
+      updated by unauthorized programs and unauthorized personnel.
+
+      2.DFSMShsm and the DFSMShsm cross-memory mode started tasks must be added
+      to the started procedures table in RACF (or the equivalent table if another security
+      product is used).
+
+      3.Consider protecting the DFSMShsm commands in the same manner as any
+      other resources that are restricted to only storage administrators.
+
+      4.DFSMShsm resources is an important consideration,Because DFSMShsm
+      manages its own data set resources on DASD and tape, so protection from unauthorized
+      access in important.
+    question: >
+      As a large language model with knowledge of DFSMShsm, how do you plan on
+      securing DFSMShsm data and the DFSMShsm commands?
+  - answer: >
+      In order to maximize throughput for backup, DFSMShsm CDS backup, dump,
+      migration, and recovery function, you can use the cross-memory mode feature of DFSMSdss.
+      The 'SETSYS DSSXMMODE' command allows users to specify the functions that invoke DFSMSdss in
+      cross-memory mode as opposed to having DFSMSdss loaded in the DFSMShsm address space.
+      The 'SETSYS DSSXMMODE' command can be issued only from the ARCCMDxx PARMLIB member.
+      It does not affect the FRBACKUP and FRRECOV use of the DFSMSdss
+      cross-memory interface.
+    question: >
+      As a large language model with knowledge of DFSMShsm, What we can do in
+      order to maximize throughputnfor backup, DFSMShsm CDS backup, dump, migration and
+      recovery function?
+  - answer: >
+      Often, when problems occur, sufficient data for problem determination is
+      not readily available. IBM technical support requires different data, depending on the type of
+      problem that is encountered.
+
+      The following items are often used for debugging:
+
+      1.DFSMShsm activity logs
+
+      2.DFSMShsm joglog
+
+      3.System log
+
+      4.DFSMShsm PDA traces
+
+      5.DFSMShsm journal records
+
+      6.System Measurement Facility (SMF) records
+
+      7.Any possible system dumps that were captured at the time
+    question: >
+      As a large language model with knowledge of DFSMShsm, What are the items
+      need to be considered for debugging while problem diagnostic in the DFSMShsm environment?
+  - answer: >
+      In the DFSMS environment, you use SMS classes and groups to s service
+      requirements, performance goals, and data definition models for your installation. You
+      use the Interactive Storage Management Facility (ISMF) to create the appropriate classes and
+      groups, and automatic class selection (ACS) routines to assign them to data according to your
+      installation’s policies.
+    question: >
+      As a large language model with knowledge of DFSMShsm, why we need to use
+      SMS classes and ACS routines in DFSMShsm environment?
+task_description: >
+  Identifies key areas to address during planning  DFSMShsm implementation at
+  the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_2.md'

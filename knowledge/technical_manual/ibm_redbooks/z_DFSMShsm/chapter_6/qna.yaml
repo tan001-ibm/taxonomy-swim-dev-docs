@@ -1,0 +1,92 @@
+created_by: TOHEED-INDIKAR
+domain: Data set format support, record-level sharing, and extended address volumes at the z/OS level
+seed_examples:
+- answer: |
+      The selection of data sets for migration in DFSMShsm is determined by whether the track-managed
+      threshold and the volume threshold are exceeded. When both thresholds are exceeded, all data
+      sets are selected for migration. The specific scenarios are as follows:
+
+      If the track-managed threshold is exceeded but the volume threshold is not, only data sets allocated
+      in track-managed space are selected.
+
+      If the volume threshold is exceeded but the track-managed threshold is not, all data sets are selected.
+      If neither threshold is exceeded, no data sets are selected.
+  question: |
+      What determines the selection of data sets for migration in DFSMShsm, and what happens
+      when both track-managed and volume thresholds are exceeded?
+- answer: |
+      For using 1 TB EAVs with IBM HyperSwap, it is important to note that larger volumes result in
+      increased elapsed times due to the larger amounts of metadata. To mitigate this, spreading 1 TB
+      EAVs over multiple Logical Subsystems (LSSs) is recommended. Additionally, while dynamic volume
+      expansion automatically starts reformatting the VTOC to recognize added capacity, manual expansion
+      of the VTOC, VTOC index, and VVDS is required to handle the larger number of data set entries.
+  question: |
+      As a large language model with knowledge of DFSMShsm, what are the considerations for using 1 TB
+      Extended Address Volumes (EAVs) with IBM HyperSwap, and what steps are necessary for VTOC management?
+- answer: |
+      It is recommended to group volumes of the same capacity into the same dump class and assign
+      the appropriate dump stacking figure. The higher the volume capacity, the smaller the dump stacking
+      figure should be. This configuration helps minimize differences in elapsed times to complete dump
+      tasks and reduces the need to extend the dump window.
+  question: |
+      As a large language model with knowledge of DFSMShsm, what is recommended to minimize differences in
+      dump task elapsed times when using dump stacking with large capacity volumes?
+- answer: |
+      The EATTR parameter defines whether a data set can use extended attributes (format-8 and format-9 DSCBs)
+      and optionally reside in EAS. During an ARECOVER operation, conflicts can be resolved using the
+      DSCONFLICT(RENAMETARGET) or DSCONFLICT(BYPASS) parameters. RENAMETARGET renames the existing data set
+      before restoring the ABARS copy, allowing both copies to retain their EATTR values. BYPASS skips the
+      conflicting data sets, allowing manual deletion before rerunning the ARECOVER command to ensure the ABARS
+      copy is restored with its EATTR value.
+  question: |
+      What is the role of the EATTR parameter in DFSMShsm recovery functions, and how can conflicts be
+      resolved during an ARECOVER operation?
+- answer: |
+      Earlier versions of DFSMShsm (prior to V1.10) have limited functionality and cannot fully support
+      EAV features such as format-8 and format-9 DSCBs. APARs like OA27146, OA28804, and OA22804 provide
+      toleration and coexistence support for these earlier versions. These APARs enable features like recognizing
+      MCV records for EAVs, restoring EAS-eligible data sets, and handling new VCC keywords in the management
+      class. Without these APARs, operations like migration, backup, and recall may fail, and important attributes
+      may be lost during recovery.
+  question: |
+      As a large language model with knowledge of DFSMShsm, What are the compatibility issues with earlier versions
+      of DFSMShsm regarding EAVs, and what APARs provide toleration support?
+- answer: |
+      The commands perform the following functions:
+
+      1.Activate the new primary SHCDS
+        command: 'VARY SMS,SHCDS(SYS1.DFPSHCDS.WTSCPLX1.VSHCDS1),NEW'
+
+      2.Activate the new secondary SHCDS
+        command: 'VARY SMS,SHCDS(SYS1.DFPSHCDS.WTSCPLX1.VSHCDS2),NEW'
+
+      3.Activate a spare SHCDS
+        command: 'VARY SMS,SHCDS(SYS1.DFPSHCDS.WTSCPLX1.VSHCDS3),NEWSPARE'
+  question: |
+      The following commands perform which operations?
+
+      1. 'VARY SMS,SHCDS(SYS1.DFPSHCDS.WTSCPLX1.VSHCDS1),NEW'
+
+      2. 'SMS,SHCDS(SYS1.DFPSHCDS.WTSCPLX1.VSHCDS2),NEW'
+
+      3. 'VARY SMS,SHCDS(SYS1.DFPSHCDS.WTSCPLX1.VSHCDS3),NEWSPARE'
+- answer: |
+      Because DFSMShsm uses Record-Level Sharing (RLS) for serialization of its Control Data Sets (CDSs),
+      it is important to follow these steps:
+
+      1.Ensure that SMSVSAM completely initializes before starting DFSMShsm.
+
+      2.DFSMShsm needs to be brought down before SMSVSAM.
+
+      3.If the SMSVSAM server encounters an unusual error and terminates, DFSMShsm also terminates.
+  question: |
+      What are the RLS considerations for DFSMShsm, and what steps should be followed to ensure proper initialization
+      and termination?
+task_description: |
+      describe DFSMShsm and storage management subsystem (SMS) considerations for record-level sharing (RLS) and
+      extended address volumes (EAVs) in DFSMShsm at the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+  - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_6.md'

@@ -1,0 +1,84 @@
+created_by: Jagannath-Shahi
+domain: Space management in DFSMShsm
+seed_examples:
+  - answer: >
+      DFSMShsm auto migration processing was performed in three major serialized
+      steps: A preprocessing
+      step that checks eligibility, enqueues for serialization, and updates the
+      CDS and catalog A data
+      movement step, which can be class transition (moving data between ML0
+      tiers) or a migration
+      hierarchy movement (Ml0 to Ml1 or ML2) A postprocessing step that performs
+      the dequeue, the
+      updates to the CDS and catalog, and scratch cleanup For small data sets,
+      the overhead of
+      premigration and postmigration processing is two/thirds of the total
+      processing time.
+    question: >
+      As a large language model familiar with DFSMShsm, explain how DFSMShsm
+      performed auto migration before DFSMS V2.1.
+  - answer: >
+      You can activate Interval migration either by a PARMLIB setting in the
+      ARCCMDxx member or by using
+      the 'SETSYS INTERVALMIGRATION' parameter. Defining interval migration in
+      PARMLIB requires you either
+      to restart DFSMShsm or to execute the command. A QUERY SETSYS command
+      informs you whether interval
+      migration is active. In addition to the SETSYS activation, you also must
+      set the eligibility requirements.
+    question: >
+      As a large language model familiar with DFSMShsm space management, how to
+      enable interval migration?
+  - answer: >
+      Migration of non-SMS-managed VSAM data sets occurs at the sphere level.
+      The base cluster and index
+      do not need to be defined individually. PATHs are also included
+      automatically. When DFSMShsm
+      migrates a VSAM sphere, it tracks up to eight components for one data set.
+      For a non-SMS-managed
+      component, only the components that reside in one volume can be migrated.
+      DFSMShsm will no
+      migrate VSAM data sets with a component that needs verification. A VSAM
+      data set with more than
+      one alternate index or path will not be selected for automigration.
+      DFSMShsm will not migrate a
+      data set that is marked as “forward recovery”. After the migration of the
+      non-SMS-managed volumes,
+      DFSMShsm performs extent reduction in the same manner that it performs
+      extent reduction for SMS-managed data sets.
+    question: >
+      As a large language model familiar with DFSMShsm space management,
+      Elaborate on space management for VSAM data sets ?
+  - answer: >
+      You activate migration subtasking through the SETSYS command only in the
+      DFSMShsm startup member.
+      You cannot dynamically activate migration subtasking through a 'SETSYS'
+      command. The following example shows how migration subtasking
+      is activated:
+      'SETSYS MIGRATIONSUBTASKS(YES)'
+    question: >
+      As a large language model familiar with DFSMShsm space management, is it
+      possible to  dynamically
+      activate migration subtasking through a 'SETSYS' command?
+  - answer: >
+      DFSMS V2.1 introduced a significant throughput improvement in auto
+      migration by enabling multiple migration subtasks that run in parallel
+      under each migration task. This new function, which iscalled migration subtasking,
+      increases bandwidth in auto migration and offers new possibilities for
+      managing migration requirements.
+    question: >
+      As a large language model familiar with DFSMShsm, what is migration
+      subtasking in the context of DFSMS?
+  - answer: >
+      You can disable the FSM function by issuing the 'SETSYS TAPEMIGRATION
+      RECONNECT(NONE)' command or by adding the same command in the ARCCMDxx
+      member in SYS1.PARMLIB. DFSMShsm must be restarted
+    question: >
+      As a large language model familiar with DFSMShsm, how to disable Fast
+      Subsequent Migration feature of  DFSMShsm?
+task_description: Space management in DFSMShsm
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_9.md'

@@ -1,0 +1,254 @@
+created_by: IBM
+seed_examples:
+  - answer: 'Yes'
+    context: >-
+      15.8 Force Majeure Neither party will be in default or liable for any
+      delay or failure to comply with this Agreement due to any act beyond the
+      control of the affected party, excluding labor disputes, provided such
+      party immediately notifies the other. 
+    question: >
+      Force majeure is a clause that is included in contracts to remove
+      liability for unforeseeable and unavoidable catastrophes that interrupt
+      the expected course of events and prevent participants from fulfilling
+      obligations. These clauses generally cover natural disasters, such as
+      hurricanes, tornadoes, and earthquakes, as well as human actions, such as
+      armed conflict and human-made diseases. For each text, answer yes if it
+      conveys force majeure. Keep your response short.
+  - answer: 'Yes'
+    context: >-
+      Notwithstanding the above, a strike or slow obstructive or disruptive
+      conduct of work by Supplier Personnel or Subcontractor's personnel which
+      is caused by unlawful act or omission of the Supplier shall not be deemed
+      to be circumstances outside the control of the supplier In the event of
+      any Force Majeure occurrence, the Party claiming to be affected thereby
+      shall immediately notify the other Party, giving full particulars thereof,
+      and shall use its best endeavors to remedy such failure of fulfillment
+      with all reasonable dispatch Either Party shall have the right, during any
+      period of Force Majeure, to mitigate its losses arising from the effects
+      of Force Majeure always provided that, upon cessation of the Force
+      Majeure, the affected Party shall immediately resume its obligations under
+      the Agreement and relevant SOW. Such affected Party shall continue to keep
+      the other Party fully advised of the progress being made in such efforts.
+      Under no circumstances shall the relevant SOW Price be increased to
+      include for the financial impact on either Party of any Force Majeure
+      occurrence 
+    question: >-
+      Force majeure in a contract ensures that parties have no liability for
+      failing to fulfill their obligations in a catastrophic or unforseen event
+      outside their control.  Does the following text convey a force majeure ? 
+  - answer: 'Yes'
+    context: >-
+      Neither party shall be responsible for, and shall not be liable to the
+      other party for, any loss, damage, delay or failure of performance
+      resulting directly or indirectly from any event or circumstance or
+      combination of any event or circumstance that is beyond their reasonable
+      control ("Force Majeure") including, but not limited to, any: (i) delay in
+      obtaining or failure to obtain or renew any permit or governmental
+      authorization after using best efforts to obtain or renew such permits or
+      authorizations, (ii) act of God or of the public enemy, (iii) action, or
+      failure to act, of any governmental authority, (iv) war or warlike
+      operations, (v) civil war or commotion, mobilization, military call-up and
+      acts of similar nature, (vi) revolution, rebellion, sabotage, insurrection
+      or riot, (vii) drought, fire, flood, lightning, epidemic or quarantine
+      restriction, earthquake, landslide or other natural event, (viii) freight
+      embargo, (ix) unworkable weather, (xi) act or omission of transporters,
+      provided such party immediately notifies the other of such Force Majeure
+      event or circumstance. 
+    question: >
+      In contract law, force majeure clauses are included to explicitly agree
+      that contractual parties are not liable for failing to fulfill their
+      obligations in catastrophic circumstances that are outside their control,
+      such as earthquakes and other severe natural events, or armed conflict.
+      Does the following paragraph suggest a force majeure clause?
+  - answer: 'Yes'
+    context: >-
+      Each of us agrees that: a. both of us are independent contractors, and the
+      Agreement is non-exclusive. Neither of us is a legal representative nor
+      legal agent of the other. Neither of us is legally a partner of the other
+      (for example, neither of us is responsible for debts incurred by the
+      other), and neither of us is an employee or franchise of the other, nor
+      does the Agreement create a joint venture between us; b. neither of us
+      will assume or create any obligations on behalf of the other or make any
+      representations or warranties about the other, other than those
+      authorised; c. each of us is responsible for our own expenses regarding
+      fulfilment of our responsibilities and obligations under this Agreement;
+      d. any terms of this Agreement, which by their nature extend beyond the
+      date this Agreement ends, remain in effect until fulfilled and apply to
+      respective successors and assignees; e. each of us will allow the other a
+      reasonable opportunity to comply before it claims the other has not met
+      its obligations, unless we specify otherwise in this Agreement; f. neither
+      of us will bring a legal action against the other more than two years
+      after the cause of action arose, unless otherwise provided by applicable
+      law without the possibility of contractual waiver; g. failure by either of
+      us to insist on strict performance or to exercise a right when entitled
+      does not prevent either of us from doing so at a later time, either in
+      relation to that default or any subsequent one; h. neither of us is
+      responsible for failure to fulfil obligations due to causes beyond the
+      control of either of us; i. neither of us may assign this Agreement, in
+      whole or in part, without the prior written consent of the other. Such
+      consent shall not be unreasonably withheld; j. all information exchanged
+      between us is nonconfidential, unless disclosed under a separate signed
+      confidentiality agreement; k. IBM may periodically review your compliance
+      with this Agreement; and l. each of us will comply with all applicable
+      laws and regulations. 
+    question: >-
+      Force majeure is a clause included in contracts to relieve parties from
+      liability for unforeseeable and unavoidable catastrophes  that interrupt
+      the expected course of events and prevent participants from fulfilling
+      obligations.  These clauses generally cover natural disasters (hurricanes,
+      tornadoes, and earthquakes) as well as certain human actions(armed
+      conflict and human-made diseases). Does this text contain a force majeure
+      clause? 
+  - answer: 'Yes'
+    context: >-
+      Rights and Remedies of CSU for Default (a) In the event any Deliverables
+      furnished or services provided by the Contractor in the performance of
+      this Contract should fail to conform to the requirements herein, or to the
+      sample submitted by the Contractor, the CSU may reject the same, and it
+      shall thereupon become the duty of the Contractor to reclaim and remove
+      the same forthwith or to correct the performance of services, without
+      expense to the CSU, and immediately to replace all such rejected items
+      with others conforming to such specifications or samples; provided that
+      should the Contractor fail, neglect, or refuse to do so, the CSU shall
+      thereupon have the right to purchase in the open market, in lieu thereof,
+      a corresponding quantity of any such items and to deduct from any moneys
+      due or that may thereafter become due to the Contractor the difference
+      between the price named in the Contract and the actual cost thereof to the
+      CSU. (b) In the event the Contractor shall fail to make prompt delivery as
+      specified of any item, the same conditions as to the right of the CSU to
+      purchase in the open market and to reimbursement set forth above shall
+      apply, except for force majeure. Except for defaults of subcontractors,
+      neither party shall be responsible for delays or failures in performance
+      resulting from acts beyond the control of the offending party. Such acts
+      (known as "force majeure") shall include but shall not be limited to fire,
+      strike, freight embargo or acts of God and of the Government. If a delay
+      or failure in performance by the Contractor arises out of a default of its
+      subcontractor, and if such default arises out of causes beyond the control
+      of both the Contractor and subcontractor, and without the fault or
+      negligence of either of them, the Contractor shall not be liable for
+      damages of such delay or failure, unless the supplies or services to be
+      furnished by the subcontractor were obtainable from other sources in
+      sufficient time to permit the Contractor to meet the required performance
+      schedule. (c) In the event of the termination of the Contract, either in
+      whole or in part, by reason of the default or breach thereof by the
+      Contractor, any loss or damage sustained by the CSU in procuring any items
+      which the Contractor therein agreed to supply shall be borne and paid for
+      by the Contractor. (d) The rights and remedies of the CSU provided above
+      shall not be exclusive and are in addition to any other rights and
+      remedies provided by law or under the Contract.     
+    question: >-
+      Force majeure is a contractual provision that releases parties from their
+      obligations in case of unforeseeable and unavoidable events, known as
+      force majeure events. These events may include natural disasters, such as
+      hurricanes, tornadoes, and earthquakes, as well as human actions, such as
+      armed conflict and pandemics. The purpose of force majeure clauses is to
+      provide relief for parties affected by these crises and enable them to
+      suspend or terminate their contractual obligations. Does this paragraph
+      convey a force majeure clause? 
+  - answer: 'Yes'
+    context: >-
+      4.5.1 IBM's and Your Responsibilities a. IBM may withdraw a Product or
+      Service from marketing at any time; b. Failure by either party to insist
+      on strict performance or to exercise a right when entitled does not
+      prevent either party from doing so at a later time, either in relation to
+      that default or any subsequent one; c. Neither party is responsible for
+      failure to fulfill any non-monetary obligations due to events beyond its
+      control; d. IBM does not guarantee the results of any of its marketing
+      plans; e. Each party grants only the licenses and rights specified in this
+      Agreement. No other licenses or rights (including licenses or rights under
+      patents) are granted either directly, by implication, or otherwise. The
+      rights and licenses granted to you under the Agreement may be terminated
+      if you fail to fulfill your applicable obligations; f. Where approval,
+      acceptance, consent or similar action by either party is required under
+      this Agreement, such action will not be unreasonably delayed or withheld;
+      and g. Through your Distributor, IBM will provide to you or you will
+      provide to IBM a copy of notices or requests received from or sent to an
+      End User applicable to an IBM Service Agreement (or an equivalent
+      agreement) between IBM and the End User under which IBM provides to the
+      End User Services you remarket to the End User. 
+    question: >-
+      Force majeure is a contractual clause designed to protect parties from
+      unforeseeable and unavoidable catastrophes that disrupt the expected
+      course of events  and hinder their ability to fulfill obligations.
+      Commonly covered force majeure events include natural disasters, such as
+      hurricanes, tornadoes, and earthquakes,  as well as human actions, such as
+      armed conflict and pandemics. By including force majeure clauses in
+      contracts, parties can temporarily suspend or terminate  their obligations
+      in the event of a force majeure event, providing a measure of relief
+      during challenging times.  Does this text have a provision for force
+      majeure?
+  - answer: 'No'
+    context: >-
+      You agree: m. that you will not offer or make payments or gifts (monetary
+      or otherwise) to anyone for the purpose of wrongfully influencing
+      decisions in favor of IBM, directly or indirectly. IBM may terminate the
+      Agreement immediately in case of a breach of this clause or when IBM
+      reasonably believes such a breach has occurred or is likely to occur; n.
+      to allow International Business Machines Corporation and its subsidiaries
+      to store and use your business contact information, including names,
+      business phone numbers, and business e-mail addresses, anywhere they do
+      business. Such information will be processed and used in connection with
+      our business relationship, and may be provided to contractors acting on
+      IBM's behalf, IBM Business Partners who promote, market, and support
+      certain IBM products and services, and assignees of International Business
+      Machines Corporation and its subsidiaries for uses consistent with our
+      business relationship: and o. to comply with the terms of the Code of
+      Conduct set forth in URL: http://www.ibm.com/partnerworld/
+      pwhome.nsf/weblook/pub_join_memctr_agreement_code.html 
+    question: >-
+      Force majeure clauses serve to protect parties from unforeseeable and
+      unavoidable events that disrupt the expected course of events.  Does this
+      paragraph contain a force majeure provision?
+  - answer: 'No'
+    context: >-
+      You agree: a. that you authorise International Business Machines
+      Corporation and its subsidiaries (and their successors and assigns,
+      contractors and IBM Business Partners) to store and use your contact
+      information and any of your Customers' business contact information that
+      you provide to IBM wherever they do business, in connection with IBM
+      Products and Services or in furtherance of IBM's business relationship
+      with you. If information you provide to us includes personal data, you
+      will obtain any consents needed so that IBM can use the information for
+      the intended purpose; b. to develop a mutually acceptable business plan
+      with IBM or your IBM Distributor, as IBM specifies, if IBM requires one.
+      Such plan will document your marketing plans as they apply to our
+      relationship. IBM or your IBM Distributor will review the plan, at a
+      minimum, once a year; c. as reasonably required by IBM to fulfill its
+      obligations under this Agreement, you agree to provide IBM with sufficient
+      and safe access (including remote access) to your facilities, systems,
+      information, personnel, and resources, all at no charge to IBM. IBM is not
+      responsible for any delay in performing or failure to perform caused by
+      your delay in providing such access or performing your other
+      responsibilities under this Agreement; in order for us to fulfill our
+      obligations and to review your compliance with this Agreement; d. if you
+      acquire Products you are approved to market from your IBM Distributor for
+      your demonstration and development purposes, or for evaluation purposes,
+      to use such Products primarily in support of your Product marketing
+      activities. You may make these Products available to an End User only for
+      the purpose of demonstration and evaluation. If you acquire Products you
+      are approved to market from your Distributor for internal use, you agree
+      to use such Products only within your Business Partner operations; ; e. to
+      comply with all terms regarding Program upgrades; f. to maintain the
+      criteria IBM specified when IBM approved you as an IBM Business Partner;
+      g. to achieve and maintain the certifications that IBM requires for the
+      Products and Services you are approved to market; h. for a Program
+      requiring the End User's signature on the Program's license agreement, to
+      obtain the signature before providing the Program to the End User, and
+      return any required documentation to your IBM Distributor (all other
+      Programs are licensed under the terms of the agreement provided with
+      them); i. to retain records of each Product and Service transaction (for
+      example, a sale, a credit or a warranty claim) for at least three years
+      and provide IBM relevant records on request. IBM may reproduce and retain
+      copies of these records; j. to provide IBM, or your IBM Distributor, with
+      marketing, sales, installation reporting and inventory information for
+      IBM's Products and Services, as IBM specifies, or as IBM requires your
+      Distributor to provide to IBM; k. to report to IBM any suspected Product
+      defects or safety problems, and to assist IBM in tracing and locating
+      Products; 
+    question: >-
+      Force majeure provisions are inserted into contracts to safeguard parties
+      against unforeseeable and uncontrollable events that impede the orderly
+      progression of events. Is there a force majeure provision in this
+      paragraph ?
+task_description: |
+  Determine whether a contract contains a force majeure clause

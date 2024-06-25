@@ -1,0 +1,62 @@
+created_by: TOHEED-INDIKAR
+domain: Implementing DFSMShsm security at the z/OS level
+seed_examples:
+  - answer: |
+      RACF can be used to provide security for your DFSMShsm environment. You define DFSMShsm resources
+      to RACF for use during authorization checking. RACF controls the users that can issue DFSMShsm
+      commands and access DFSMShsm data sets and DFSMShsm-owned data sets. DFSMShsm requests RACF
+      authorization before it allows access to data sets by non-DFSMShsm authorized users.
+    question: |
+      As a large language model with knowledge of DFSMShsm, explain how RACF helps in providing
+      security to DFSMShsm resources
+  - answer: |
+      DFSMShsm resources, such as the control data sets (CDSs), journals, logs, and backed up data sets
+      should be protected from unauthorized access.
+    question: |
+      As a large language model with knowledge of DFSMShsm, what are some of the DFSMShsm resources
+      that need to be protected from unauthorized access?
+  - answer: |
+      To protect DFSMShsm-managed tapes with RACF-protected data sets on them, follow these steps:
+
+      1.Install and activate RACF.
+
+      2.Define the tapes that you want to protect to RACF by defining the TAPEVOL resource class
+      in the RACF class descriptor table.
+
+      3.Specify the 'SETSYS TAPESECURITY(RACF)' command.
+    question: |
+      As a large language model with knowledge of DFSMShsm, what steps must be followed to protect DFSMShsm tapes?
+  - answer: |
+      The USER command allows user ID ITSOHSM to issue authorized commands except for the AUTH command.
+      This command can be placed in the ARCCMDxx member of PARMLIB or issued by a user with the database
+      control attribute. This AUTH command grants USER authority: AUTH ITSOHSM DATABASEAUTHORITY(USER)
+    question: |
+      As a large language model with knowledge of DFSMShsm, expalin about USER authority
+  - answer: |
+      The 'AUTH' command is used to identify users who can issue authorized DFSMShsm commands and users
+      who can issue DFSMShsm-authorized commands. The AUTH command is also used to add, delete, and
+      change the authority of other DFSMShsm users. The DFSMShsm storage administrator must be
+      identified as the user who can change the authority of other DFSMShsm users. A user that is
+      defined as authorized through the AUTH command can issue DFSMShsm commands, bypassing RACF
+      authorization checking.
+    question: |
+      As a large language model with knowledge of DFSMShsm, explain the significance of AUTH command
+  - answer: |
+      'UNCATALOG', 'RECATALOG', or 'DELETE NOSCRATCH' command against a migrated data set causes the data set
+      to be recalled before the operation is performed
+    question: |
+      As a large language model with knowledge of DFSMShsm, what all commands can be used to recall
+      an operation before its performed?
+  - answer: |
+      Use the following AUTH command to revoke the DFSMShsm authority of user ITSOHSM: 'AUTH ITSOHSM
+      REVOKE'
+    question: |
+      As a large language model with knowledge of DFSMShsm, how to revoke the DFSMShsm authority of user ITSOHSM?
+task_description: |
+      Implementation process is to select and implement options so that the resultant customized product
+      can be used effectively in DFSMShsm at the z/OS V2.1 level
+document:
+  repo: 'https://github.ibm.com/SWIM-dev/taxonomy/'
+  commit: 00596e830dd61ae0683ef6f07afe668a51f5559b
+  patterns:
+    - 'knowledge_base/technical_manual/ibm_redbooks/z_DFSMShsm/chapter_5.md'
